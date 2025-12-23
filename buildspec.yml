@@ -19,4 +19,4 @@ phases:
     discard-paths: yes
   cache:
     paths:
-      - '/root/.m2/**/*''
+      - '/root/.m2/**/*'
