@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > Employee</title>
+  <title>Coverage Report > EmployeeService</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -19,25 +19,19 @@
 <div class="breadCrumbs">
 Current scope:     <a href="../../index.html">all classes</a>
     <span class="separator">|</span>
-    <a href="../index.html">testing.entities</a>
+    <a href="../index.html">testing.services</a>
 </div>
 
-<h1>Coverage Summary for Class: Employee (testing.entities)</h1>
+<h1>Coverage Summary for Class: EmployeeService (testing.services)</h1>
 
 <table class="coverageStats">
-
 <tr>
   <th class="name">Class</th>
 </tr>
-  <tr>
-    <td class="name">Employee$HibernateInstantiator</td>
-  </tr>
-  <tr>
-    <td class="name">Employee$HibernateProxy</td>
-  </tr>
 <tr>
-  <td class="name"><strong>Total</strong></td>
+  <td class="name">EmployeeService</td>
 </tr>
+
 </table>
 
 <br/>
@@ -45,29 +39,17 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 
 <pre>
-<code class="sourceCode" id="sourceCode">&nbsp;package testing.entities;
+<code class="sourceCode" id="sourceCode">&nbsp;package testing.services;
 &nbsp;
-&nbsp;import jakarta.persistence.*;
-&nbsp;import lombok.*;
 &nbsp;
-&nbsp;@Getter
-&nbsp;@Setter
-&nbsp;@Entity
-&nbsp;@Builder
-&nbsp;@AllArgsConstructor
-&nbsp;@NoArgsConstructor
-&nbsp;public class Employee {
+&nbsp;import testing.dto.EmployeeDto;
 &nbsp;
-&nbsp;    @Id
-&nbsp;    @GeneratedValue(strategy = GenerationType.IDENTITY)
-&nbsp;    private Long id;
+&nbsp;public interface EmployeeService {
 &nbsp;
-&nbsp;    @Column(unique = true)
-&nbsp;    private String email;
-&nbsp;
-&nbsp;    private String name;
-&nbsp;
-&nbsp;    private Long salary;
+&nbsp;    EmployeeDto getEmployeeById(Long id);
+&nbsp;    EmployeeDto createNewEmployee(EmployeeDto employeeDto);
+&nbsp;    EmployeeDto updateEmployee(Long id, EmployeeDto employeeDto);
+&nbsp;    void deleteEmployee(Long id);
 &nbsp;}
 </code>
 </pre>

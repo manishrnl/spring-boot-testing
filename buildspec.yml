@@ -3,24 +3,48 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      java: temurin-21
-    commands:
-      - echo Installing Maven...
-  pre_build:
-    commands:
-      - echo Logging in to Docker hub...
-      - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+      java: corretto21
+
   build:
     commands:
-      - echo Building, Testing and packaging the application...
-      - mvn package
-  post_build:
-    commands:
-      - echo Build, Testing and packaging completed.
+      - echo Building the Spring Boot application...
+      - mvn clean package -DskipTests
+      - echo Creating deployment package for Elastic Beanstalk...
+      - zip -r deploy.zip target/*.jar .platform/ Procfile .elasticbeanstalk/ .ebextensions/ || true
+
 artifacts:
   files:
-    - target/*.jar
-  discard-paths: yes
+    - deploy.zip
+  discard-paths: no   # important: keep folder structure
+
 cache:
   paths:
     - '/root/.m2/**/*'
+
+
+#version: 0.2
+#
+#phases:
+#  install:
+#    runtime-versions:
+#      java: corretto21
+#    commands:
+#      - echo Installing Maven...
+#  pre_build:
+#    commands:
+#      - echo Logging in to Docker hub...
+#      - echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
+#  build:
+#    commands:
+#      - echo Building, Testing and packaging the application...
+#      - mvn package
+#  post_build:
+#    commands:
+#      - echo Build, Testing and packaging completed.
+#artifacts:
+#  files:
+#    - target/*.jar
+#  discard-paths: yes
+#cache:
+#  paths:
+#    - '/root/.m2/**/*'

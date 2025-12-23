@@ -5,7 +5,7 @@
 <html id="htmlId">
 <head>
   <meta http-equiv="Content-Type" content="text/html;charset=UTF-8"> 
-  <title>Coverage Report > EmployeeService</title>
+  <title>Coverage Report > DataService</title>
   <style type="text/css">
     @import "../../css/coverage.css";
     @import "../../css/idea.min.css";
@@ -22,14 +22,14 @@ Current scope:     <a href="../../index.html">all classes</a>
     <a href="../index.html">testing.services</a>
 </div>
 
-<h1>Coverage Summary for Class: EmployeeService (testing.services)</h1>
+<h1>Coverage Summary for Class: DataService (testing.services)</h1>
 
 <table class="coverageStats">
 <tr>
   <th class="name">Class</th>
 </tr>
 <tr>
-  <td class="name">EmployeeService</td>
+  <td class="name">DataService</td>
 </tr>
 
 </table>
@@ -41,15 +41,9 @@ Current scope:     <a href="../../index.html">all classes</a>
 <pre>
 <code class="sourceCode" id="sourceCode">&nbsp;package testing.services;
 &nbsp;
-&nbsp;
-&nbsp;import testing.dto.EmployeeDto;
-&nbsp;
-&nbsp;public interface EmployeeService {
-&nbsp;
-&nbsp;    EmployeeDto getEmployeeById(Long id);
-&nbsp;    EmployeeDto createNewEmployee(EmployeeDto employeeDto);
-&nbsp;    EmployeeDto updateEmployee(Long id, EmployeeDto employeeDto);
-&nbsp;    void deleteEmployee(Long id);
+&nbsp;public interface DataService
+&nbsp;{
+&nbsp;    String getData();
 &nbsp;}
 </code>
 </pre>
@@ -74,7 +68,7 @@ Current scope:     <a href="../../index.html">all classes</a>
 
 <div class="footer">
     
-    <div style="float:right;">generated on 2025-12-20 18:45</div>
+    <div style="float:right;">generated on 2025-12-23 18:08</div>
 </div>
 </body>
 </html>
