@@ -37,10 +37,10 @@ public class EmployeeServiceImpl implements EmployeeService {
         log.info("Creating new employee with email: {}", employeeDto.getEmail());
         List<Employee> existingEmployees = employeeRepository.findByEmail(employeeDto.getEmail());
 
-        if (!existingEmployees.isEmpty()) {
-            log.error("Employee already exists with email: {}", employeeDto.getEmail());
-            throw new RuntimeException("Employee already exists with email: " + employeeDto.getEmail());
-        }
+//        if (!existingEmployees.isEmpty()) {
+//            log.error("Employee already exists with email: {}", employeeDto.getEmail());
+//            throw new RuntimeException("Employee already exists with email: " + employeeDto.getEmail());
+//        }
         Employee newEmployee = modelMapper.map(employeeDto, Employee.class);
         Employee savedEmployee = employeeRepository.save(newEmployee);
         log.info("Successfully created new employee with id: {}", savedEmployee.getId());

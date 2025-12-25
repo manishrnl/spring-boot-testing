@@ -1,0 +1,19 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TestMain" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="DB_HOST_URL" value="localhost" />
+      <env name="DB_NAME" value="testTesting" />
+      <env name="DB_PASSWORD" value="Manish@2009" />
+      <env name="DB_USER_NAME" value="postgres" />
+      <env name="DOCKER_PASSWORD" value="dckr_pat_6kOk7PuA78FaP7e6n3OhOJgJ34c" />
+      <env name="DOCKER_USERNAME" value="manishrnl" />
+      <env name="SPRING_PROFILES_ACTIVE" value="test" />
+    </envs>
+    <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <module name="Testing" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="testing.TestingApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

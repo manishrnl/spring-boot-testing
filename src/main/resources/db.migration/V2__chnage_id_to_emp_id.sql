@@ -1,1 +1,0 @@
-ALTER TABLE employee RENAME COLUMN id TO emp_id;
