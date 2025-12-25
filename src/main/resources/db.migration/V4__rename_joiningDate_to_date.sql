@@ -1,0 +1,1 @@
+ALTER  TABLE department RENAME COLUMN joining_date TO date;
