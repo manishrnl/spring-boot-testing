@@ -27,18 +27,18 @@ class EmployeeControllerTest extends AbstractIntegrationTest {
     private Employee testEmployee;
     private EmployeeDto testEmployeeDto;
 
-    @BeforeEach
-    void setup() {
-        employeeRepository.deleteAll();
-        testEmployee = Employee.builder()
-                .email("manish@gmail.com")
-                .name("Manish")
-                .salary(200L)
-                .build();
-
-        testEmployeeDto = modelMapper.map(testEmployee, EmployeeDto.class);
-
-    }
+//    @BeforeEach
+//    void setup() {
+//        employeeRepository.deleteAll();
+//        testEmployee = Employee.builder()
+//                .email("manish@gmail.com")
+//                .name("Manish")
+//                .salary(200L)
+//                .build();
+//
+//        testEmployeeDto = modelMapper.map(testEmployee, EmployeeDto.class);
+//
+//    }
 
     @AfterEach
     void tearDown() {
@@ -90,7 +90,7 @@ class EmployeeControllerTest extends AbstractIntegrationTest {
                 .expectStatus().isCreated()
                 .expectBody()
                 .jsonPath("$.email").isEqualTo(testEmployeeDto.getEmail())
-                .jsonPath("$.name").isEqualTo(testEmployeeDto.getName());
+                .jsonPath("$.full_name").isEqualTo(testEmployeeDto.getName());
     }
 
     @Test

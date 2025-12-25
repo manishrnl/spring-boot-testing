@@ -26,16 +26,16 @@ class EmployeeRepositoryTest {
     private EmployeeRepository employeeRepository;
     private Employee employee;
 
-    @Test
-    @BeforeEach
-    void setUp() {
-        employee = Employee.builder()
-                .email("manish5@gmail.com")
-                .name("Manish")
-                .salary(50000L)
-                .build();
-
-    }
+//    @Test
+//    @BeforeEach
+//    void setUp() {
+//        employee = Employee.builder()
+//                .email("manish5@gmail.com")
+//                .name("Manish")
+//                .salary(50000L)
+//                .build();
+//
+//    }
 
     @Test
     void testFindByEmail_whenEmailIsPresent_thenReturnEmployee() {

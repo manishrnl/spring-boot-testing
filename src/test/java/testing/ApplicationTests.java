@@ -35,7 +35,7 @@ public class ApplicationTests {
 
     @Test
     @DisplayName("Hello Tests")
-        //Displays the name of the test
+        //Displays the full_name of the test
     void contextLoads() {
         log.info("test 1 runs successfully");
 
